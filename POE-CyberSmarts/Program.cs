@@ -10,6 +10,7 @@ namespace POE_CyberSmarts
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome To CyberSmarts");
         }
     }
 }
