@@ -33,10 +33,29 @@ namespace POE_CyberSmarts
 
             //displaying the ASCII art and greeting the user
             Greeting greetingMessage = new Greeting();
-            play.GreetingAudio();
+            greetingMessage.GreetingAudio();
 
             Console.WriteLine(" ██████╗██╗   ██╗██████╗ ███████╗██████╗ ███████╗███╗   ███╗ █████╗ ██████╗ ████████╗███████╗\r\n██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔════╝████╗ ████║██╔══██╗██╔══██╗╚══██╔══╝██╔════╝\r\n██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝███████╗██╔████╔██║███████║██████╔╝   ██║   ███████╗\r\n██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗╚════██║██║╚██╔╝██║██╔══██║██╔══██╗   ██║   ╚════██║\r\n╚██████╗   ██║   ██████╔╝███████╗██║  ██║███████║██║ ╚═╝ ██║██║  ██║██║  ██║   ██║   ███████║\r\n ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝\r\n                                                                                             ");
             Console.WriteLine("Hello " + name + ", And Welcome To CyberSmarts Where We Will Explore CyberSecurity Together!!");
+
+            //calling on the basic responses class
+            BasicResponses greetingResponses = new BasicResponses();
+            Console.WriteLine("Well how can I help you, " + name + " today?? ps. say exit to close the app");
+            while (true)
+            {
+                Console.WriteLine("You: ");
+                string userInput = Console.ReadLine();
+
+                //making the program scan the users input to send out the basic responses
+                Console.WriteLine(greetingResponses.Response(userInput));
+
+                //allowing the user to exit the application
+                if (userInput == "exit")
+                {
+                    Console.WriteLine("Goodbye, and stay safe online!");
+                    break;
+                }
+            }
         }
     }
 }
